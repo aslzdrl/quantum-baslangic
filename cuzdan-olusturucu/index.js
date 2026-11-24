@@ -34,5 +34,19 @@ gizliBilgiler.textContent = [
 ].join("\n");
 
 gizliBolum.append(baslik, gizliBilgiler);
-sonuclar.replaceChildren(acikBilgiler, gizliBolum);
+const checksumDugmesi = document.createElement("button");
+checksumDugmesi.type = "button";
+checksumDugmesi.textContent = "Checksum deneyi yap";
+
+const checksumSonucu = document.createElement("p");
+
+checksumDugmesi.addEventListener("click", () => {
+  const kelimeKopyasi = mnemonic.phrase.split(" ");
+  kelimeKopyasi[0] = kelimeKopyasi[0] === "abandon" ? "ability" : "abandon";
+
+  const gecerli = Mnemonic.isValidMnemonic(kelimeKopyasi.join(" "));
+  checksumSonucu.textContent = `Tek kelime değişikliği: ${gecerli ? "Kabul" : "Ret"}`;
+});
+
+sonuclar.replaceChildren(acikBilgiler, gizliBolum, checksumDugmesi, checksumSonucu);
 });
