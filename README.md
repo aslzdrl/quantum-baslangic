@@ -110,3 +110,20 @@ Remix’te sözleşme fonksiyonunu Deploy & Run panelinden, Etherscan’de ise W
 - EVM hedefi: shanghai
 - Optimizer: Kapalı
 - ABI dosyası: `etkinlik-kayit/EtkinlikKayitV3.abi.json`
+
+
+## İP-24 · Quantumania web arayüzü
+
+Quantumania, MetaMask ile Sepolia’daki EtkinlikKayitV3 sözleşmesine bağlanıyor. Sözleşme adresi ve ağ kimliği `etkinlik-kayit/web/config.js` dosyasında, ABI ise `etkinlik-kayit/EtkinlikKayitV3.abi.json` dosyasında.
+
+Eğitim cüzdanı oluşturucuyla ürettiğim ve İP-13’te MetaMask’te doğruladığım hesabı Quantumania’da da kullanıyorum. Arayüz MetaMask’ten hesabın açık adresini okuyor ve işlemleri MetaMask imzalıyor. İki uygulama arasında kurtarma kelimesi, seed veya özel anahtar aktarılmıyor.
+
+### Quantumania’yı çalıştırma
+
+Proje kökünde PowerShell açıp şu komutları çalıştırın:
+
+    cd .\etkinlik-kayit
+    npm.cmd ci
+    npm.cmd run dev
+
+Terminalde `Local:` yanında verilen adresi açın.

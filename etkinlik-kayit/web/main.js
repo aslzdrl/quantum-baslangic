@@ -374,7 +374,13 @@ byId('refresh').addEventListener('click', async () => {
   }
 });
 
-wallet?.on?.('accountsChanged', refreshWallet);
+wallet?.on?.('accountsChanged', () => {
+  if (!sending && !checkingReceipt && !pendingTransaction) {
+    showStatus('');
+  }
+
+  void refreshWallet();
+});
 wallet?.on?.('chainChanged', refreshWallet);
 wallet?.on?.('disconnect', refreshWallet);
 
