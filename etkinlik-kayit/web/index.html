@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3edfc">
+  <title>Quantumania</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <h1>
+        <span class="mark" aria-hidden="true"></span>
+        <span id="event-name">quantumania</span>
+      </h1>
+      <div class="wallet">
+        <span id="network" class="pill">Sepolia</span>
+        <button type="button" id="connect">Cüzdan bağla</button>
+      </div>
+    </header>
+
+    <div class="sprigs" aria-hidden="true">
+      <span><i></i><i></i><i></i><i></i></span>
+      <span><i></i><i></i><i></i><i></i></span>
+    </div>
+
+    <section class="chain" aria-label="Blokzincir kavramları">
+      <details open>
+        <summary><span class="icon" aria-hidden="true">◇</span>Blok</summary>
+        <p>Bir blok, ağda kaydedilen işlemleri bir araya getirir.</p>
+      </details>
+
+      <button class="links" type="button" aria-label="Blok ile işlem arasındaki zinciri salla">
+        <i></i><i></i><i></i><i></i>
+      </button>
+
+      <details>
+        <summary><span class="icon" aria-hidden="true">⇄</span>İşlem</summary>
+        <p>İşlem, cüzdanın imzalayıp ağa gönderdiği bir taleptir. Kayıt olmak ve giriş onaylamak birer işlemdir.</p>
+      </details>
+
+      <button class="links" type="button" aria-label="İşlem ile onay arasındaki zinciri salla">
+        <i></i><i></i><i></i><i></i>
+      </button>
+
+      <details>
+        <summary><span class="icon" aria-hidden="true">✓</span>Onay</summary>
+        <p>İşlem bloğa alındığında makbuzu oluşur. Başarılı olup olmadığını bu makbuzdan kontrol edebilirsin.</p>
+      </details>
+    </section>
+
+    <p id="wallet-notice" class="notice" role="status" hidden></p>
+
+    <section class="panels" aria-label="Etkinlik kaydı">
+      <section class="panel">
+        <div class="panel-heading">
+          <h2><span class="icon" aria-hidden="true">♧</span>Katılımcı</h2>
+          <span id="capacity" class="pill green">— / — kayıt</span>
+        </div>
+
+        <dl>
+          <div><dt>Takma ad</dt><dd id="nickname-status">—</dd></div>
+          <div><dt>Giriş durumu</dt><dd id="entry-status">—</dd></div>
+        </dl>
+<p id="registration-notice" class="notice" hidden></p>
+        <form id="registration">
+          <label for="nickname">Takma ad</label>
+          <input id="nickname" required autocomplete="off">
+          <button id="register" type="submit" disabled>Kayıt ol</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <h2><span class="icon" aria-hidden="true">⬡</span>Görevli paneli</h2>
+        </div>
+
+        <p id="role">Görevli hesabını MetaMask ile bağlayabilirsin.</p>
+
+        <form id="checkin">
+          <label for="participant">Katılımcı adresi</label>
+          <input id="participant" placeholder="0x…" required autocomplete="off" spellcheck="false">
+          <button id="approve" type="submit" disabled>Girişi onayla</button>
+        </form>
+      </section>
+    </section>
+
+    <section class="feedback" aria-label="İşlem durumu">
+      <p id="status" aria-live="polite"></p>
+      <a id="explorer" target="_blank" rel="noopener noreferrer" hidden>Etherscan’de görüntüle ↗</a>
+      <button id="refresh" class="secondary" type="button">Bilgileri yenile</button>
+    </section>
+
+    <section class="garden" aria-label="Blokzincir ipuçları">
+      <p id="welcome">Hoş geldin!</p>
+
+      <div class="flowers">
+        <div>
+          <button type="button" aria-expanded="false" aria-controls="tip-sepolia"
+            aria-label="Sepolia hakkında bilgi"></button>
+          <div class="tip" id="tip-sepolia" hidden>
+            <strong>Sepolia</strong>
+            <p>Ethereum uygulamalarını denemek için kullanılan test ağı.</p>
+          </div>
+        </div>
+
+        <div>
+          <button type="button" aria-expanded="false" aria-controls="tip-gas"
+            aria-label="Gas ücreti hakkında bilgi"></button>
+          <div class="tip" id="tip-gas" hidden>
+            <strong>Gas ücreti</strong>
+            <p>İşlemin ağda yürütülmesi için ödenen ücret.</p>
+          </div>
+        </div>
+
+        <div>
+          <button type="button" aria-expanded="false" aria-controls="tip-hash"
+            aria-label="İşlem hash’i hakkında bilgi"></button>
+          <div class="tip" id="tip-hash" hidden>
+            <strong>İşlem hash’i</strong>
+            <p>İşlemi Etherscan’de bulmak için kullanılan kimlik.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "quantumania",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite web",
+    "build": "vite build web"
+  },
+  "dependencies": {
+    "ethers": "^6.16.0"
+  },
+  "devDependencies": {
+    "vite": "^7.3.8"
+  }
+}
